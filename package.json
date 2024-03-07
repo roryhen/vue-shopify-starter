@@ -1,0 +1,13 @@
+{
+  "name": "oranges-plus",
+  "type": "module",
+  "scripts": {
+    "dev": "shopify theme dev --store=$npm_package_name",
+    "pull": "shopify theme pull --development --nodelete --store=$npm_package_name",
+    "push": "shopify theme push --store=$npm_package_name"
+  },
+  "devDependencies": {
+    "@shopify/cli": "^3.57.0",
+    "@shopify/theme": "^3.57.0"
+  }
+}

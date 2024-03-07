@@ -1,0 +1,26 @@
+{% comment %}
+  Renders counter
+
+  Accepts:
+  - count: {Int} starting number
+
+  Usage:
+  {% render 'counter', count: section.settings.number %}
+{% endcomment %}
+<script type="module">
+  const { createApp } = Vue;
+
+  createApp({
+    data() {
+      return {
+        count: {{ count | default: 0 }},
+      };
+    },
+    delimiters: ['${', '}'],
+  }).mount('#counter');
+</script>
+
+<div id="counter">
+  This is the count: ${count}
+  <button @click="count++">Count</button>
+</div>
