@@ -8,12 +8,14 @@
   {% render 'counter', count: section.settings.number %}
 {% endcomment %}
 <script type="module">
-  const { createApp } = Vue;
+  import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
   createApp({
-    data() {
+    setup() {
+      const count = ref({{ count | default: 0 }});
+
       return {
-        count: {{ count | default: 0 }},
+        count
       };
     },
     delimiters: ['${', '}'],

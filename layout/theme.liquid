@@ -34,7 +34,6 @@
     {%- if settings.animations_reveal_on_scroll -%}
       <script src="{{ 'animations.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    <script src="{{'vue.global.prod.js' | asset_url }}" defer></script>
 
     {{ content_for_header }}
 
@@ -297,6 +296,8 @@
     {%- endif -%}
 
     {% sections 'header-group' %}
+
+    {% render 'counter', count: 3 %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
